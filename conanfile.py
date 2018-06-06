@@ -28,6 +28,10 @@ class NanopbConan(ConanFile):
     source_subfolder = "source_subfolder"
     build_subfolder = "build_subfolder"
 
+    requires = (
+        'protobuf/3.5.2@bincrafters/stable'
+    )
+
     def config_options(self):
         if self.settings.os == 'Windows':
             del self.options.fPIC
@@ -60,6 +64,8 @@ class NanopbConan(ConanFile):
         self.copy(pattern="*.a", dst="lib", keep_path=False)
         self.copy(pattern="*.so*", dst="lib", keep_path=False)
         self.copy(pattern="*.dylib", dst="lib", keep_path=False)
+        self.copy(pattern="*/nanopb_pb2.py", dst="lib/python2.7/site-packages", keep_path=False)
+        self.copy(pattern="*/plugin_pb2.py", dst="lib/python2.7/site-packages", keep_path=False)
 
     def package_info(self):
         self.cpp_info.libs = tools.collect_libs(self)

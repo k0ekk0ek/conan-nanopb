@@ -2,7 +2,7 @@
 
 | Bintray | Windows | Linux & macOS |
 |:--------:|:---------:|:-----------------:|
-|BINTRAY_BADGE_URL|APPVEYOR_BADGE_URL|TRAVIS_BADGE_URL|
+|[ ![Download](https://api.bintray.com/packages/k0ekk0ek/public-conan/nanopb%3Ak0ekk0ek/images/download.svg) ](https://bintray.com/k0ekk0ek/public-conan/nanopb%3Ak0ekk0ek/_latestVersion)|[![Build status](https://ci.appveyor.com/api/projects/status/ipt2dyh39reoaf52/branch/stable/0.3.9.1?svg=true)](https://ci.appveyor.com/project/k0ekk0ek/conan-nanopb/branch/stable/0.3.9.1)|[![Build Status](https://travis-ci.org/k0ekk0ek/conan-nanopb.svg?branch=stable%2F0.3.9.1)](https://travis-ci.org/k0ekk0ek/conan-nanopb)|
 
 ## Conan.io Information
 
@@ -36,10 +36,10 @@ The contents of this GIT repository are completely separate from the software be
 
 ### License(s) for packaged software:
 
-    ~/.conan/data/<pkg_name>/<pkg_version>/bincrafters/package/<random_package_id>/license/<LICENSE_FILES_HERE>
+    ~/.conan/data/nanopb/<pkg_version>/bincrafters/package/<random_package_id>/license/<LICENSE_FILES_HERE>
 
 *Note :   The most common filenames for OSS licenses are `LICENSE` AND `COPYING` without file extensions.*
 
 ### License for Bincrafters recipe:
 
-    ~/.conan/data/<pkg_name>/<pkg_version>/bincrafters/export/LICENSE.md
+    ~/.conan/data/nanopb/<pkg_version>/bincrafters/export/LICENSE.md

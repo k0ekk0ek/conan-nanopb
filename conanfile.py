@@ -17,12 +17,14 @@ class NanopbConan(ConanFile):
     generators = "cmake"
     settings = "os", "arch", "compiler", "build_type"
     options = {
-        "shared": [True, False],
-        "fPIC": [True, False],
+        'shared': [True, False],
+        'fPIC': [True, False],
+        'enable_malloc': [True, False]
     }
     default_options = (
-        "shared=False",
-        "fPIC=True",
+        'shared=False',
+        'fPIC=True',
+        'enable_malloc=True'
     )
 
     source_subfolder = "source_subfolder"
@@ -44,6 +46,7 @@ class NanopbConan(ConanFile):
 
     def configure_cmake(self):
         cmake = CMake(self)
+        cmake.definitions['ENABLE_MALLOC'] = self.options.enable_malloc
         if self.settings.os != 'Windows':
             cmake.definitions['CMAKE_POSITION_INDEPENDENT_CODE'] = self.options.fPIC
         cmake.configure(build_folder=self.build_subfolder)

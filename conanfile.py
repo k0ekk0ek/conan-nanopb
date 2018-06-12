@@ -24,7 +24,8 @@ class NanopbConan(ConanFile):
     default_options = (
         'shared=False',
         'fPIC=True',
-        'enable_malloc=True'
+        'enable_malloc=True',
+        'protobuf:shared=True'
     )
 
     source_subfolder = "source_subfolder"

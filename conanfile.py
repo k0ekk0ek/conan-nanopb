@@ -30,9 +30,7 @@ class NanopbConan(ConanFile):
     source_subfolder = "source_subfolder"
     build_subfolder = "build_subfolder"
 
-    requires = (
-        'protobuf/3.5.2@bincrafters/stable'
-    )
+    build_requires = 'protobuf/3.5.2@bincrafters/stable'
 
     def config_options(self):
         if self.settings.os == 'Windows':

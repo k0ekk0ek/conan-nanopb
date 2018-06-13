@@ -13,7 +13,7 @@ class NanopbConan(ConanFile):
     homepage = "https://jpa.kapsi.fi/nanopb/"
     license = "zlib"
     exports = ["LICENSE.md"]
-    exports_sources = ["CMakeLists.txt"]
+    exports_sources = ["CMakeLists.txt", "no_debug_postfix.patch"]
     generators = "cmake"
     settings = "os", "arch", "compiler", "build_type"
     options = {
@@ -43,6 +43,7 @@ class NanopbConan(ConanFile):
         os.rename(extracted_dir, self.source_subfolder)
 
     def configure_cmake(self):
+        tools.patch(patch_file='no_debug_postfix.patch')
         cmake = CMake(self)
         cmake.definitions['ENABLE_MALLOC'] = self.options.enable_malloc
         if self.settings.os != 'Windows':

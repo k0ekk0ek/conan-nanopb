@@ -46,6 +46,8 @@ class NanopbConan(ConanFile):
         tools.patch(patch_file='no_debug_postfix.patch')
         cmake = CMake(self)
         cmake.definitions['ENABLE_MALLOC'] = self.options.enable_malloc
+        # Disable forced static linkage.
+        cmake.definitions['nanopb_MSVC_STATIC_RUNTIME'] = False
         if self.settings.os != 'Windows':
             cmake.definitions['CMAKE_POSITION_INDEPENDENT_CODE'] = self.options.fPIC
         cmake.configure(build_folder=self.build_subfolder)
